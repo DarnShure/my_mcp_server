@@ -1,0 +1,59 @@
+[api]
+port = 6006
+token_limit = 16384
+max_ongoing_requests = 80
+version = '1.0.3'
+
+[api.index]
+index1 = true
+index2 = false
+
+[platform]
+platform='vllm'
+
+[db]
+connection_uri = 'postgresql://postgres:admin@localhost'
+# db_name = 'llm_server.db'
+db_name = 'llm_dev_h'
+vector_db_name = 'llm_dev_h_vector'
+version = '0.0.1'
+
+[log]
+do_print = true
+path = 'log'
+# files = ['RAG_api', 'RAG_index']
+
+[log.files.default]
+rotation='00:00'    # new file everyday
+format = '<green>{time:YYYY-MM-DD HH:mm:ss.SSS}</green> | <level>{level: <8}</level> | <cyan>{name}</cyan>:<cyan>{function}</cyan>:<cyan>{line}</cyan> - <level>{{"message": {message}, "extra": {extra}}}</level>'
+
+[log.files.RAG_api] # logger.add parameters
+format = '{message}'
+# rotation='00:00'    # new file everyday
+# format = '<green>{time:YYYY-MM-DD HH:mm:ss.SSS}</green> | <level>{level: <8}</level> | <cyan>{name}</cyan>:<cyan>{function}</cyan>:<cyan>{line}</cyan> - <level>{{"message": {message}, "extra": {extra}}}</level>'
+# serialize=true
+
+[log.files.RAG_index]
+
+[log.files.QA_index]
+
+[log.files.Reviews]
+
+[llm_server]
+llm_url = 'http://localhost:5021/v1'
+api_key = 'test123'
+embedding_url = 'http://localhost:5043/v1'
+reasoning = true
+is_llm_log = false
+is_emb_log = false
+
+
+[rag]
+score_threshold = 0.6
+att_link_threshold = 0.7
+chunk_size = 1024
+is_rag_log = true
+post_source_filter_similarity_threshold=0.6
+alpha = 1.0
+[review]
+related_threshold = 0.75
