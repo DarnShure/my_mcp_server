@@ -55,5 +55,7 @@ chunk_size = 1024
 is_rag_log = true
 post_source_filter_similarity_threshold=0.6
 alpha = 1.0
+index_db = 'chunking_study/processed_sources/index0.db'
+
 [review]
 related_threshold = 0.75

@@ -8,3 +8,7 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Assets
+chunking_study
+formatting_study

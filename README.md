@@ -2,6 +2,14 @@
 
 This project provides an end-to-end testable MCP (Model Context Protocol) server environment, including a FastAPI-based chatbot generation stub, an MCP server, and a client stub for testing the `generate` tool. The main focus is on enabling easy local testing of the chatbot generation workflow.
 
+
+## TLDR: This package is responsible for end-to-end pdf preprocessing for llm ingestion.
+It adds several features onto pdfplumber
+
+MCP Server Feedback Mechanism
+Agentic adaptive pdf parsing.
+Iterative evolutionary framework.
+
 ## Project Structure
 
 ```
